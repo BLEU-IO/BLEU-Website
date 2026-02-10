@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ excerpt or description or site.description }}">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ excerpt or description or site.description }}">
+  <meta property="og:type" content="{% if layout == 'layouts/blog.njk' %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  {% if thumbnail %}
+  <meta property="og:image" content="{{ site.url }}{{ thumbnail }}">
+  {% endif %}
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or site.name }}">
+  <meta name="twitter:description" content="{{ excerpt or description or site.description }}">
+  
+  <!-- Theme -->
+  <meta name="theme-color" content="#1545ae">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/logo.svg" type="image/svg+xml">
+</head>
+<body class="flex flex-col min-h-screen">
+  {% include "components/header.njk" %}
+  
+  <main class="flex-1">
+    {{ content | safe }}
+  </main>
+  
+  {% include "components/footer.njk" %}
+  
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

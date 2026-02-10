@@ -1,0 +1,40 @@
+<footer class="border-t border-bleu-100 bg-white py-12">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <img src="/assets/images/logo.svg" alt="BLEU" class="w-10 h-10 rounded">
+        <div>
+          <div class="font-semibold text-bleu-950">BLEU Community</div>
+          <div class="text-sm text-bleu-600">{{ site.tagline }}</div>
+        </div>
+      </div>
+      
+      <!-- Links -->
+      <div class="flex flex-wrap justify-center gap-8 md:gap-12">
+        <div class="flex flex-col gap-2 text-center md:text-left">
+          <span class="font-semibold text-bleu-950 text-sm uppercase tracking-wide">Content</span>
+          <a href="/blogs/" class="text-bleu-700 hover:text-bleu-900 text-sm">All Blogs</a>
+          <a href="/contributing/" class="text-bleu-700 hover:text-bleu-900 text-sm">Submit a Blog</a>
+        </div>
+        
+        <div class="flex flex-col gap-2 text-center md:text-left">
+          <span class="font-semibold text-bleu-950 text-sm uppercase tracking-wide">Community</span>
+          <a href="{{ site.discord.invite }}" target="_blank" rel="noopener" class="text-bleu-700 hover:text-bleu-900 text-sm">Discord</a>
+          <a href="{{ site.social.twitter }}" target="_blank" rel="noopener" class="text-bleu-700 hover:text-bleu-900 text-sm">Twitter</a>
+          <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener" class="text-bleu-700 hover:text-bleu-900 text-sm">LinkedIn</a>
+        </div>
+        
+        <div class="flex flex-col gap-2 text-center md:text-left">
+          <span class="font-semibold text-bleu-950 text-sm uppercase tracking-wide">Open Source</span>
+          <a href="https://github.com/{{ site.repo }}" target="_blank" rel="noopener" class="text-bleu-700 hover:text-bleu-900 text-sm">GitHub</a>
+          <a href="https://github.com/{{ site.repo }}/issues" target="_blank" rel="noopener" class="text-bleu-700 hover:text-bleu-900 text-sm">Issues</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-8 pt-8 border-t border-bleu-100 text-center text-bleu-700 text-sm">
+      © 2026 BLEU Community. Open source with ❤️
+    </div>
+  </div>
+</footer>

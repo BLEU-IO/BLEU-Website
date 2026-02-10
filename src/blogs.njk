@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: All Blogs
+description: Browse all community blog posts
+permalink: /blogs/
+---
+
+<div class="max-w-6xl mx-auto px-4 py-12">
+  <header class="mb-10">
+    <h1 class="text-3xl md:text-4xl font-bold text-bleu-950 mb-4">Community Blogs</h1>
+    <p class="text-bleu-700 max-w-2xl">
+      Explore posts from our community. Want to share your knowledge? 
+      <a href="https://github.com/{{ site.repo }}" target="_blank" rel="noopener" class="underline hover:text-bleu-900">Submit a blog via PR</a>.
+    </p>
+  </header>
+  
+  <!-- Tags Filter -->
+  {% if collections.blogTags.length > 0 %}
+  <div class="flex flex-wrap gap-2 mb-8">
+    <span class="text-sm text-bleu-600 font-medium mr-2">Filter by tag:</span>
+    {% for tag in collections.blogTags %}
+      <a href="#" class="badge hover:bg-bleu-200 transition-colors" data-tag="{{ tag }}">{{ tag }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+  
+  <!-- Blog Grid -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for post in collections.blogs %}
+      {% include "components/blog-card.njk" %}
+    {% else %}
+      <div class="col-span-full card text-center py-12">
+        <p class="text-bleu-700 text-lg mb-4">No blogs published yet.</p>
+        <p class="text-bleu-600 mb-6">Be the first to contribute!</p>
+        <a href="https://github.com/{{ site.repo }}" target="_blank" rel="noopener" class="btn btn-primary">
+          Submit Your Blog
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>

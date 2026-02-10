@@ -1,0 +1,44 @@
+<a href="/blogs/{{ post.fileSlug }}/" class="card group hover:shadow-md hover:border-bleu-200 transition-all block">
+  {% if post.data.thumbnail %}
+  <div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
+    <img 
+      src="{{ post.data.thumbnail }}" 
+      alt="{{ post.data.title }}" 
+      class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+      loading="lazy"
+    >
+  </div>
+  {% endif %}
+  
+  {% if post.data.tags %}
+  <div class="flex gap-2 flex-wrap mb-3">
+    {% for tag in post.data.tags | limit(3) %}
+      <span class="badge text-xs">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+  
+  <h3 class="text-xl font-bold text-bleu-950 group-hover:text-bleu-700 transition-colors mb-2">
+    {{ post.data.title }}
+  </h3>
+  
+  <p class="text-bleu-700 text-sm mb-4 line-clamp-2">
+    {{ post.data.excerpt or post.templateContent | excerpt }}
+  </p>
+  
+  <div class="flex items-center justify-between text-sm text-bleu-600">
+    <div class="flex items-center gap-2">
+      <img 
+        src="https://github.com/{{ post.data.authorGithub }}.png?size=40" 
+        alt="{{ post.data.author }}" 
+        class="w-6 h-6 rounded-full"
+        loading="lazy"
+      >
+      <span>{{ post.data.author }}</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <time>{{ post.data.date | dateFormat }}</time>
+      <span>{{ post.templateContent | readingTime }} min</span>
+    </div>
+  </div>
+</a>

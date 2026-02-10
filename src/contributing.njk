@@ -1,0 +1,112 @@
+---
+layout: base.njk
+title: Contributing
+description: How to submit a blog post to the BLEU community
+permalink: /contributing/
+---
+
+<div class="max-w-3xl mx-auto px-4 py-12">
+  <article class="prose">
+    <h1>📝 How to Submit a Blog Post</h1>
+    
+    <p>
+      We welcome contributions from the community! Our blog is fully open-source, 
+      and anyone can submit a post via GitHub Pull Request.
+    </p>
+    
+    <hr>
+    
+    <h2>Quick Start</h2>
+    
+    <ol>
+      <li><strong>Fork</strong> the <a href="https://github.com/{{ site.repo }}" target="_blank">repository</a></li>
+      <li><strong>Create</strong> a new file: <code>content/blogs/your-title.md</code></li>
+      <li><strong>Write</strong> your post using the template below</li>
+      <li><strong>Open</strong> a Pull Request</li>
+      <li><strong>Community reviews</strong> your post</li>
+      <li><strong>Merged = Published!</strong> 🎉</li>
+    </ol>
+    
+    <h2>Blog Template</h2>
+    
+    <p>Use this template for your blog post:</p>
+    
+    <pre><code>---
+title: "Your Awesome Title"
+author: "Your Name"
+authorGithub: "your-github-username"
+date: 2026-02-08
+excerpt: "A brief description of your post (1-2 sentences)"
+tags:
+  - tutorial
+  - javascript
+thumbnail: /assets/images/your-image.jpg  # optional
+layout: layouts/blog.njk
+---
+
+Your content here. Use standard Markdown!
+
+## Subheadings
+
+Regular paragraphs with **bold** and *italic* text.
+
+### Code Blocks
+
+```javascript
+function hello() {
+  console.log("Hello, BLEU!");
+}
+```
+
+### Lists
+
+- Item one
+- Item two
+- Item three
+
+### Links and Images
+
+[Link text](https://example.com)
+
+![Alt text](/assets/images/example.jpg)</code></pre>
+    
+    <h2>Guidelines</h2>
+    
+    <ul>
+      <li>Write about tech, learning, open-source, or community topics</li>
+      <li>Keep it respectful and constructive</li>
+      <li>Include code examples where helpful</li>
+      <li>Use clear, descriptive titles</li>
+      <li>Add a thumbnail image if possible (16:9 ratio recommended)</li>
+      <li>Images should be added to <code>/src/assets/images/</code></li>
+    </ul>
+    
+    <h2>File Naming</h2>
+    
+    <p>Name your file using kebab-case:</p>
+    <ul>
+      <li>✅ <code>getting-started-with-rust.md</code></li>
+      <li>✅ <code>my-open-source-journey.md</code></li>
+      <li>❌ <code>My Blog Post.md</code></li>
+      <li>❌ <code>post1.md</code></li>
+    </ul>
+    
+    <h2>Review Process</h2>
+    
+    <ol>
+      <li>Open your Pull Request</li>
+      <li>Maintainers will review for quality and guidelines</li>
+      <li>You may receive feedback or suggestions</li>
+      <li>Once approved, your PR is merged</li>
+      <li>GitHub Actions builds and deploys automatically</li>
+      <li>Your blog is live within minutes!</li>
+    </ol>
+    
+    <h2>Questions?</h2>
+    
+    <p>
+      Join our <a href="{{ site.discord.invite }}" target="_blank">Discord</a> 
+      and ask in <code>#blog-submissions</code>!
+    </p>
+  </article>
+</div>

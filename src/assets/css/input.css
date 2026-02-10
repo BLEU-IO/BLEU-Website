@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cairo font */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+
+  body {
+    @apply font-cairo antialiased text-bleu-950;
+    background: linear-gradient(to bottom, #ffffff, #f0f9ff);
+    min-height: 100vh;
+  }
+
+  a {
+    @apply text-bleu-600 hover:text-bleu-700 transition-colors;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-2 rounded-lg font-semibold transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-bleu-700 text-white hover:bg-bleu-800;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-bleu-700 border border-bleu-200 hover:bg-bleu-50;
+  }
+
+  .btn-discord {
+    @apply bg-[#5865F2] text-white hover:bg-[#4752C4];
+  }
+
+  .card {
+    @apply bg-white rounded-2xl border border-bleu-100 shadow-sm p-6;
+  }
+
+  .badge {
+    @apply inline-block px-3 py-1 text-xs font-semibold rounded-full bg-bleu-100 text-bleu-700;
+  }
+}
+
+/* Markdown content styling - matches original BLEU */
+.prose {
+  @apply text-bleu-950 max-w-none;
+}
+
+.prose h1 {
+  @apply text-4xl md:text-5xl font-bold mb-6 pb-2 border-b-2 border-bleu-500 text-bleu-950;
+}
+
+.prose h2 {
+  @apply text-3xl md:text-4xl font-semibold mb-5 pb-1 border-b border-bleu-300 text-bleu-950 mt-12;
+}
+
+.prose h3 {
+  @apply text-2xl md:text-3xl font-medium mb-4 text-bleu-950 mt-8;
+}
+
+.prose h4 {
+  @apply text-xl md:text-2xl font-medium mb-2 text-bleu-950 mt-6;
+}
+
+.prose p {
+  @apply mb-5 leading-relaxed text-bleu-950;
+}
+
+.prose ul {
+  @apply list-disc list-outside pl-6 mb-5 space-y-2 text-bleu-950;
+}
+
+.prose ol {
+  @apply list-decimal list-outside pl-6 mb-5 space-y-2 text-bleu-950;
+}
+
+.prose li {
+  @apply text-bleu-950;
+}
+
+.prose a {
+  @apply text-bleu-600 hover:text-bleu-500 underline transition-colors duration-200;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-bleu-400 pl-4 py-2 my-4 italic bg-bleu-50 text-bleu-800 rounded-r-lg;
+}
+
+.prose hr {
+  @apply border-t-2 border-bleu-200 my-8;
+}
+
+.prose table {
+  @apply w-full border-collapse border border-bleu-200 text-sm my-6 rounded-lg overflow-hidden;
+}
+
+.prose thead {
+  @apply bg-bleu-50;
+}
+
+.prose th {
+  @apply border border-bleu-200 p-3 bg-bleu-100 font-semibold text-left text-bleu-950;
+}
+
+.prose td {
+  @apply border border-bleu-200 p-3 text-bleu-950;
+}
+
+.prose tr {
+  @apply border-b border-bleu-200;
+}
+
+.prose code {
+  @apply bg-bleu-900 rounded px-1.5 py-0.5 text-sm text-white font-mono;
+}
+
+.prose pre {
+  @apply rounded-lg overflow-x-auto my-6;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose img {
+  @apply rounded-lg my-6 max-w-full h-auto;
+}
+
+/* Code highlighting theme overrides */
+.prose pre[class*="language-"] {
+  @apply bg-bleu-950 rounded-lg p-4;
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(0 0 0 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}

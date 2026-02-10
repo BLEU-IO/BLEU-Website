@@ -1,0 +1,33 @@
+{
+  "name": "BLEU-Website",
+  "version": "1.0.0",
+  "description": "BLEU Community Blog - Open-source, community-driven Programming, Software Enginnering, and Computer Science",
+  "type": "commonjs",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/assets/css/input.css -o ./_site/assets/css/style.css --minify",
+    "watch:css": "tailwindcss -i ./src/assets/css/input.css -o ./_site/assets/css/style.css --watch",
+    "build:11ty": "eleventy",
+    "watch:11ty": "eleventy --serve",
+    "build": "npm run build:css && npm run build:11ty",
+    "dev": "npm-run-all --parallel watch:*",
+    "clean": "rm -rf _site"
+  },
+  "keywords": [
+    "blog",
+    "eleventy",
+    "bleu",
+    "community"
+  ],
+  "author": "BLEU Community",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-fetch": "^4.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "autoprefixer": "^10.4.18",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.35",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.1"
+  }
+}
