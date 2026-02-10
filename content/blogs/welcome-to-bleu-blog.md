@@ -10,7 +10,7 @@ tags:
   - open-source
 ---
 
-Welcome to the new BLEU community blog! 🎉
+Welcome to the new BLEU community blog!
 
 We've rebuilt our platform from the ground up with a focus on **simplicity**, **openness**, and **community participation**.
 
@@ -55,10 +55,10 @@ The entire site is **static HTML**—no database, no server, just blazing fast p
 
 We'd love for you to be part of this community:
 
-- 📝 **Write a blog post** - Share your knowledge
-- 🐛 **Report issues** - Help us improve
-- 💡 **Suggest features** - Tell us what you want
-- 🌟 **Star the repo** - Show your support
+- **Write a blog post** - Share your knowledge
+- **Report issues** - Help us improve
+- **Suggest features** - Tell us what you want
+- **Star the repo** - Show your support
 
 Check out our [Contributing Guide](/contributing/) to get started!
 

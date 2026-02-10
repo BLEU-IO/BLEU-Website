@@ -27,7 +27,7 @@
   }
 
   .btn-primary {
-    @apply bg-bleu-700 text-white hover:bg-bleu-800;
+    @apply bg-bleu-700 text-white hover:bg-bleu-800 hover:text-white;
   }
 
   .btn-secondary {
@@ -148,6 +148,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
