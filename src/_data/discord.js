@@ -8,8 +8,8 @@ module.exports = async function () {
     if (!GUILD_ID || !BOT_TOKEN) {
         console.log("Discord: No credentials, using fallback data");
         return {
-            members: "1000+",
-            online: "50+",
+            members: "3000+",
+            online: "150+",
             available: false
         };
     }
@@ -30,15 +30,15 @@ module.exports = async function () {
 
         return {
             members: data.approximate_member_count || "3000+",
-            online: data.approximate_presence_count || "500+",
+            online: data.approximate_presence_count || "150+",
             name: data.name,
             available: true
         };
     } catch (error) {
         console.error("Discord API error:", error.message);
         return {
-            members: "1000+",
-            online: "50+",
+            members: "3000+",
+            online: "150+",
             available: false
         };
     }
