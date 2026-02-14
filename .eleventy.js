@@ -11,17 +11,20 @@ module.exports = function (eleventyConfig) {
     // Blog collection sorted by date (newest first)
     eleventyConfig.addCollection("blogs", function (collectionApi) {
         return collectionApi.getFilteredByGlob("content/blogs/*.md")
+            .filter(post => post.fileSlug !== "0template")
             .sort((a, b) => b.date - a.date);
     });
 
     // Get unique tags from all blogs
     eleventyConfig.addCollection("blogTags", function (collectionApi) {
         const tags = new Set();
-        collectionApi.getFilteredByGlob("content/blogs/*.md").forEach(post => {
+        collectionApi.getFilteredByGlob("content/blogs/*.md")
+            .filter(post => post.fileSlug !== "0template")
+            .forEach(post => {
             if (post.data.tags) {
                 post.data.tags.forEach(tag => tags.add(tag));
             }
-        });
+            });
         return [...tags].sort();
     });
 
@@ -58,6 +61,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.ignores.add(".git/**");
     eleventyConfig.ignores.add("README.md");
     eleventyConfig.ignores.add("CONTRIBUTING.md");
+    eleventyConfig.ignores.add("content/blogs/0template.md");
     eleventyConfig.ignores.add("src/_data/**");
     eleventyConfig.ignores.add("src/_includes/**");
     eleventyConfig.ignores.add("src/assets/**");

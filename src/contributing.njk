@@ -20,8 +20,8 @@ permalink: /contributing/
     
     <ol>
       <li><strong>Fork</strong> the <a href="https://github.com/{{ site.repo }}" target="_blank">repository</a></li>
-      <li><strong>Create</strong> a new file: <code>content/blogs/your-title.md</code></li>
-      <li><strong>Write</strong> your post using the template below</li>
+      <li><strong>Copy</strong> <code>content/blogs/0template.md</code> to <code>content/blogs/your-title.md</code></li>
+      <li><strong>Edit</strong> your copied file with your blog content</li>
       <li><strong>Open</strong> a Pull Request</li>
       <li><strong>Community reviews</strong> your post</li>
       <li><strong>Merged = Published!</strong></li>
@@ -29,19 +29,23 @@ permalink: /contributing/
     
     <h2>Blog Template</h2>
     
-    <p>Use this template for your blog post:</p>
+    <p>Use the ready-to-copy template file:</p>
+    <pre><code>cp content/blogs/0template.md content/blogs/your-title.md</code></pre>
+    <p>Then edit the copied file and replace all placeholder values/content.</p>
+    
+    <p>If you prefer, here is the same template inline:</p>
     
     <pre><code>---
 title: "Your Awesome Title"
 author: "Your Name"
 authorGithub: "your-github-username"
-date: 2026-02-08
+date: 2026-02-14
 excerpt: "A brief description of your post (1-2 sentences)"
 tags:
   - tutorial
   - javascript
 thumbnail: /assets/images/your-image.jpg  # optional
-layout: layouts/blog.njk
+layout: blog.njk
 ---
 
 Your content here. Use standard Markdown!

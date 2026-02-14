@@ -5,26 +5,36 @@ We welcome contributions from the community! Our blog is fully open-source, and 
 ## Quick Start
 
 1. **Fork** this repository
-2. **Create** a new file: `content/blogs/your-title.md`
-3. **Write** your post using the template below
+2. **Copy** `content/blogs/0template.md` to `content/blogs/your-title.md`
+3. **Edit** your copied file with your content
 4. **Open** a Pull Request
 5. **Community reviews** your post
 6. **Merged = Published!** 🎉
 
 ## Blog Template
 
+Use the ready-to-copy template file:
+
+```bash
+cp content/blogs/0template.md content/blogs/your-title.md
+```
+
+Then update the copied file fields (`title`, `author`, `authorGithub`, `date`, `excerpt`, `tags`) and replace the content.
+
+If you prefer, here is the same template inline:
+
 ```markdown
 ---
 title: "Your Awesome Title"
 author: "Your Name"
 authorGithub: "your-github-username"
-date: 2026-02-08
+date: 2026-02-14
 excerpt: "A brief description of your post (1-2 sentences)"
 tags:
   - tutorial
   - javascript
 thumbnail: /assets/images/your-image.jpg  # optional
-layout: layouts/blog.njk
+layout: blog.njk
 ---
 
 Your content here. Use standard Markdown!
