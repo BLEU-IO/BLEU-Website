@@ -6,9 +6,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        cairo: ['Cairo', 'sans-serif'],
-      },
       colors: {
         bleu: {
           50: '#eff6ff',

@@ -4,9 +4,9 @@ module.exports = function (eleventyConfig) {
     // Plugins
     eleventyConfig.addPlugin(syntaxHighlight);
 
-    // Copy static assets
-    eleventyConfig.addPassthroughCopy("src/assets/images");
-    eleventyConfig.addPassthroughCopy("src/assets/js");
+    // Copy static assets to public paths used by templates
+    eleventyConfig.addPassthroughCopy({ "src/assets/images": "assets/images" });
+    eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
 
     // Blog collection sorted by date (newest first)
     eleventyConfig.addCollection("blogs", function (collectionApi) {
@@ -75,4 +75,3 @@ module.exports = function (eleventyConfig) {
         markdownTemplateEngine: "njk"
     };
 };
-
