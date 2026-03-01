@@ -1,4 +1,15 @@
-# Why Torrent is a revolutionary invention ?
+---
+title: "Torrent technology"
+author: "Shamqmq"
+authorGithub: "BLEU-IO"
+date: 2026-03-02
+excerpt: "A quick brief about torrent i wasted hours searching and writing so you don't."
+tags:
+  - technology brief
+  - communication
+---
+
+
 
 ## What is Torrent ?
 
@@ -8,7 +19,7 @@ Torrent technology (specifically the **BitTorrent protocol**, invented by Bram C
 The BitTorrent ecosystem consists of several key components working together. At the heart is the tracker, which acts like a matchmaking service. it keeps track of which peers have which pieces of a file. The torrent file serves as a blueprint, containing metadata about the file structure and how to contact the tracker. Peers are individual clients that participate in sharing, and among these, seeders have the complete file while leechers are still downloading.  
 That the basic knowledge we need and now we need to know why would that matters and what does **decentralization** means?
 
-  
+## Why Torrent is a revolutionary invention ?  
 
 ### Decentralization (Peer-to-Peer Architecture) : 
 
