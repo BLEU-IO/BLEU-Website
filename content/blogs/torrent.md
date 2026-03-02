@@ -1,7 +1,7 @@
 ---
 title: "Torrent technology"
 author: "Shamqmq"
-authorGithub: "BLEU-IO"
+authorGithub: "shamqmq"
 date: 2026-03-02
 excerpt: "A quick brief about torrent i wasted hours searching and writing so you don't."
 tags:
@@ -69,7 +69,7 @@ While often associated with media piracy (a significant use case, though not the
 I guess you want to stay safe. **But if you want to see some good reasons or to know what exactly you should beware from.**
 Here’s exactly what happens if you slip up, and how to armor up:  
 
-### 1. **ISP Faggots**
+### 1. **ISP Bastards**
 **Your ISP Hunts You.** They see everything. Torrenting without encryption broadcasts your IP and the files you’re grabbing. You may face **(Throttling)** where your ISP will slash your speeds the moment they detect torrent traffic. Or worse you may face **Fines**.    
 Countries like Germany impose €1,000+ fines per infringing file.  
 
