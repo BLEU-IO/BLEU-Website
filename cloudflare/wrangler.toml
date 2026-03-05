@@ -1,0 +1,8 @@
+name = "bleu-root-router"
+main = "worker.js"
+compatibility_date = "2026-03-04"
+
+# Replace with your zone/domain values before deploy
+routes = [
+  { pattern = "bleu-community.tech/*", zone_name = "bleu-community.tech" },
+]
