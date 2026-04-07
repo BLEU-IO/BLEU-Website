@@ -1,39 +1,36 @@
 ---
 layout: base.njk
-title: All Blogs
-description: Browse all community blog posts
-permalink: /blogs/
 ---
+
+{% set posts = collections.blogs %}
 
 <div class="max-w-6xl mx-auto px-4 py-12">
   <header class="mb-10">
-    <h1 class="text-3xl md:text-4xl font-bold text-bleu-950 mb-4">Community Blogs</h1>
+    <h1 class="text-3xl md:text-4xl font-bold text-bleu-950 mb-4">{{ t("blogs:header.title", locale) }}</h1>
     <p class="text-bleu-700 max-w-2xl">
-      Explore posts from our community. Want to share your knowledge? 
-      <a href="https://github.com/{{ site.repo }}" target="_blank" rel="noopener" class="underline hover:text-bleu-900">Submit a blog via PR</a>.
+      {{ t("blogs:header.description", locale) }}
+      <a href="{{ localeUrl('/contributing/', locale) }}" class="underline hover:text-bleu-900">{{ t("blogs:header.submitViaPr", locale) }}</a>.
     </p>
   </header>
-  
-  <!-- Tags Filter -->
+
   {% if collections.blogTags.length > 0 %}
-  <div class="flex flex-wrap gap-2 mb-8">
-    <span class="text-sm text-bleu-600 font-medium mr-2">Filter by tag:</span>
+  <div class="flex flex-wrap gap-2 mb-8 items-center">
+    <span class="text-sm text-bleu-600 font-medium me-2">{{ t("blogs:filter.label", locale) }}</span>
     {% for tag in collections.blogTags %}
       <a href="#" class="badge hover:bg-bleu-200 transition-colors" data-tag="{{ tag }}">{{ tag }}</a>
     {% endfor %}
   </div>
   {% endif %}
-  
-  <!-- Blog Grid -->
+
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {% for post in collections.blogs %}
+    {% for post in posts %}
       {% include "components/blog-card.njk" %}
     {% else %}
       <div class="col-span-full card text-center py-12">
-        <p class="text-bleu-700 text-lg mb-4">No blogs published yet.</p>
-        <p class="text-bleu-600 mb-6">Be the first to contribute!</p>
-        <a href="https://github.com/{{ site.repo }}" target="_blank" rel="noopener" class="btn btn-primary">
-          <span class="btn-label">Submit Your Blog</span>
+        <p class="text-bleu-700 text-lg mb-4">{{ t("blogs:empty.title", locale) }}</p>
+        <p class="text-bleu-600 mb-6">{{ t("blogs:empty.description", locale) }}</p>
+        <a href="{{ localeUrl('/contributing/', locale) }}" class="btn btn-primary">
+          <span class="btn-label">{{ t("blogs:empty.submitBlog", locale) }}</span>
         </a>
       </div>
     {% endfor %}

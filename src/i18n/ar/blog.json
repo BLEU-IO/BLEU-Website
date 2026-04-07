@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "titlePattern": "{{title}} | مجتمع BLEU"
+  },
+  "post": {
+    "minutesRead": "{{count}} دقيقة قراءة",
+    "editOnGithub": "عدّل على GitHub",
+    "comments": "التعليقات",
+    "commentsDescription": "التعليقات تعمل عبر giscus ويتم حفظها داخل GitHub Discussions.",
+    "shareOnTwitter": "المشاركة على تويتر",
+    "shareOnLinkedin": "المشاركة على لينكدإن"
+  }
+}

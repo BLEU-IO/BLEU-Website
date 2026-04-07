@@ -1,6 +1,14 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const {
+    createI18nInstance,
+    localizeUrl,
+    validateResources
+} = require("./src/i18n");
 
 module.exports = function (eleventyConfig) {
+    validateResources();
+    const i18n = createI18nInstance();
+
     // Plugins
     eleventyConfig.addPlugin(syntaxHighlight);
 
@@ -8,32 +16,34 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "src/assets/images": "assets/images" });
     eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
 
-    // Blog collection sorted by date (newest first)
-    eleventyConfig.addCollection("blogs", function (collectionApi) {
+    function getBlogPosts(collectionApi) {
         return collectionApi.getFilteredByGlob("content/blogs/*.md")
             .filter(post => post.fileSlug !== "0template")
             .sort((a, b) => b.date - a.date);
+    }
+
+    // Blog collection sorted by date (newest first)
+    eleventyConfig.addCollection("blogs", function (collectionApi) {
+        return getBlogPosts(collectionApi);
     });
 
     // Get unique tags from all blogs
     eleventyConfig.addCollection("blogTags", function (collectionApi) {
         const tags = new Set();
-        collectionApi.getFilteredByGlob("content/blogs/*.md")
-            .filter(post => post.fileSlug !== "0template")
-            .forEach(post => {
+        getBlogPosts(collectionApi).forEach(post => {
             if (post.data.tags) {
                 post.data.tags.forEach(tag => tags.add(tag));
             }
-            });
+        });
         return [...tags].sort();
     });
 
     // Date formatting filter
-    eleventyConfig.addFilter("dateFormat", function (date) {
-        return new Date(date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
+    eleventyConfig.addFilter("dateFormat", function (date, locale = "ar") {
+        return new Date(date).toLocaleDateString(locale === "en" ? "en-US" : "ar-EG", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
         });
     });
 
@@ -56,6 +66,22 @@ module.exports = function (eleventyConfig) {
         return arr.slice(0, limit);
     });
 
+    eleventyConfig.addNunjucksGlobal("t", function (key, locale = "ar", options = {}) {
+        if (!i18n.exists(key, { lng: locale })) {
+            throw new Error(`Missing translation key "${key}" for locale "${locale}".`);
+        }
+
+        return i18n.t(key, { lng: locale, ...options });
+    });
+
+    eleventyConfig.addNunjucksGlobal("localeUrl", function (url, locale = "ar") {
+        return localizeUrl(url, locale);
+    });
+
+    eleventyConfig.addNunjucksGlobal("alternateLocaleUrl", function (url, locale = "ar") {
+        return localizeUrl(url, locale === "en" ? "ar" : "en");
+    });
+
     // Ignore node_modules and other non-content directories
     eleventyConfig.ignores.add("node_modules/**");
     eleventyConfig.ignores.add(".git/**");
@@ -65,6 +91,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.ignores.add("src/_data/**");
     eleventyConfig.ignores.add("src/_includes/**");
     eleventyConfig.ignores.add("src/assets/**");
+    eleventyConfig.ignores.add("src/i18n/**");
+    eleventyConfig.ignores.add("scripts/**");
 
     return {
         dir: {

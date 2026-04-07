@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "titlePattern": "{{title}} | BLEU Community"
+  },
+  "post": {
+    "minutesRead": "{{count}} min read",
+    "editOnGithub": "Edit on GitHub",
+    "comments": "Comments",
+    "commentsDescription": "Comments are powered by giscus and stored in GitHub Discussions.",
+    "shareOnTwitter": "Share on Twitter",
+    "shareOnLinkedin": "Share on LinkedIn"
+  }
+}

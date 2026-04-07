@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "All Blogs",
+    "description": "Browse all published posts from the BLEU community."
+  },
+  "header": {
+    "title": "Community Blogs",
+    "description": "Explore posts from our community. Want to share your knowledge?",
+    "submitViaPr": "Submit a blog via PR"
+  },
+  "filter": {
+    "label": "Filter by tag:"
+  },
+  "empty": {
+    "title": "No blogs published yet.",
+    "description": "Be the first to contribute!",
+    "submitBlog": "Submit Your Blog"
+  }
+}
