@@ -26,7 +26,7 @@ layout: base.njk
         <span class="font-semibold" dir="ltr">{{ author }}</span>
       </a>
       <span class="text-bleu-300">•</span>
-      <time datetime="{{ date | dateFormat(locale) }}">{{ date | dateFormat(locale) }}</time>
+      <time datetime="{{ date | dateIso }}">{{ date | dateFormat(locale) }}</time>
       <span class="text-bleu-300">•</span>
       <span>{{ t("blog:post.minutesRead", locale, { count: content | readingTime }) }}</span>
     </div>

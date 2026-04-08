@@ -47,6 +47,10 @@ module.exports = function (eleventyConfig) {
         });
     });
 
+    eleventyConfig.addFilter("dateIso", function (date) {
+        return new Date(date).toISOString().slice(0, 10);
+    });
+
     // Reading time filter
     eleventyConfig.addFilter("readingTime", function (content) {
         if (!content) return 1;
