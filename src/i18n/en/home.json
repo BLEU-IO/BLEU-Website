@@ -5,6 +5,7 @@
   },
   "hero": {
     "title": "Building • Learning • Exploring • Uniting",
+    "originalTitle": "Building Learning Exploring Uniting",
     "description": "A community-driven blog for developers. Share your knowledge, learn from others, and build the future together.",
     "browseBlogs": "Browse Blogs",
     "contribute": "Contribute"

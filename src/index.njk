@@ -11,6 +11,11 @@ layout: base.njk
       <h1 class="text-4xl md:text-6xl font-bold text-bleu-950 mb-6">
         {{ t("home:hero.title", locale) }}
       </h1>
+      {% if locale == "ar" %}
+      <p class="text-sm md:text-base font-medium tracking-[0.22em] uppercase text-bleu-500 mb-5" dir="ltr">
+        {{ t("home:hero.originalTitle", locale) }}
+      </p>
+      {% endif %}
       <p class="text-xl text-bleu-700 mb-8 max-w-2xl mx-auto">
         {{ t("home:hero.description", locale) }}
       </p>

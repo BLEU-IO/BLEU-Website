@@ -1,6 +1,6 @@
 {
   "site": {
-    "communityLabel": "المجتمع",
+    "communityLabel": "مجتمع",
     "tagline": "نبني • نتعلّم • نستكشف • نتّحد",
     "description": "مدونة مجتمعية للمطورين لمشاركة المعرفة والتعلم معًا وبناء مستقبل التقنية."
   },
@@ -16,7 +16,7 @@
   "footer": {
     "content": "المحتوى",
     "allBlogs": "كل المدونات",
-    "submitBlog": "أرسل مقالة",
+    "submitBlog": "أرسل مدونة",
     "community": "المجتمع",
     "openSource": "المصدر المفتوح",
     "issues": "المشكلات",

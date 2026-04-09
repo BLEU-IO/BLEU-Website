@@ -41,7 +41,7 @@
     "guideline3": "Include code examples where helpful",
     "guideline4": "Use clear, descriptive titles",
     "guideline5": "Add a thumbnail image if possible (16:9 ratio recommended)",
-    "guideline6": "Images should be added to /src/assets/images/",
+    "guideline6": "Images should be added to",
     "fileGood1": "getting-started-with-rust.md",
     "fileGood2": "my-open-source-journey.md",
     "fileBad1": "My Blog Post.md (Avoid spaces)",
