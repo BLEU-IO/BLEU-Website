@@ -65,6 +65,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.ignores.add("src/_data/**");
     eleventyConfig.ignores.add("src/_includes/**");
     eleventyConfig.ignores.add("src/assets/**");
+    eleventyConfig.ignores.add("docs");
 
     return {
         dir: {
