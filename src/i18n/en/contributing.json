@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "title": "Contributing",
+    "description": "Learn how to submit a blog post to the BLEU community."
+  },
+  "page": {
+    "title": "How to Submit a Blog Post",
+    "intro": "We welcome contributions from the community! Our blog is fully open source, and anyone can submit a post via GitHub Pull Request.",
+    "quickStart": "Quick Start",
+    "blogTemplate": "Blog Template",
+    "templateIntro": "Use the ready-to-copy template file:",
+    "templateEdit": "Then edit the copied file and replace all placeholder values and content.",
+    "templateInline": "If you prefer, here is the same template inline:",
+    "guidelines": "Guidelines",
+    "fileNaming": "File Naming",
+    "fileNamingIntro": "Name your file using kebab-case:",
+    "reviewProcess": "Review Process",
+    "questions": "Questions?",
+    "questionsBody": "Join our",
+    "questionsSuffix": "and ask in #blog-submissions!"
+  },
+  "steps": {
+    "fork": "Fork",
+    "copy": "Copy",
+    "edit": "Edit",
+    "open": "Open",
+    "reviews": "Community reviews",
+    "published": "Merged = Published!"
+  },
+  "list": {
+    "forkRepository": "the",
+    "copyFrom": "Copy",
+    "copyTo": "to",
+    "forkRepo": "repository",
+    "copyTemplate": "content/blogs/0template.md to content/blogs/your-title.md",
+    "editFile": "your copied file with your blog content",
+    "openPr": "a Pull Request",
+    "communityReviews": "your post",
+    "guideline1": "Write about tech, learning, open-source, or community topics",
+    "guideline2": "Keep it respectful and constructive",
+    "guideline3": "Include code examples where helpful",
+    "guideline4": "Use clear, descriptive titles",
+    "guideline5": "Add a thumbnail image if possible (16:9 ratio recommended)",
+    "guideline6": "Images should be added to",
+    "fileGood1": "getting-started-with-rust.md",
+    "fileGood2": "my-open-source-journey.md",
+    "fileBad1": "My Blog Post.md (Avoid spaces)",
+    "fileBad2": "post1.md (Avoid generic names)",
+    "review1": "Open your Pull Request",
+    "review2": "Maintainers will review for quality and guidelines",
+    "review3": "You may receive feedback or suggestions",
+    "review4": "Once approved, your PR is merged",
+    "review5": "GitHub Actions builds and deploys automatically",
+    "review6": "Your blog is live within minutes!"
+  },
+  "template": {
+    "title": "Your Awesome Title",
+    "author": "Your Name",
+    "excerpt": "A brief description of your post (1-2 sentences)",
+    "body": "Your content here. Use standard Markdown!",
+    "subheadings": "Subheadings",
+    "paragraph": "Regular paragraphs with **bold** and *italic* text.",
+    "lists": "Lists",
+    "itemOne": "Item one",
+    "itemTwo": "Item two",
+    "itemThree": "Item three",
+    "linksAndImages": "Links and Images",
+    "linkText": "Link text",
+    "altText": "Alt text"
+  }
+}

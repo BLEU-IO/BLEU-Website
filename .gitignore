@@ -27,3 +27,4 @@ npm-debug.log*
 # Cache
 .cache/
 .eleventy-cache/
+pnpm-lock.yaml

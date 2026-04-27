@@ -1,14 +1,16 @@
+{% set metaTitle = pageTitleKey and t(pageTitleKey, locale) or title or site.name %}
+{% set metaDescription = pageDescriptionKey and t(pageDescriptionKey, locale) or excerpt or description or t("common:site.description", locale) %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang or locale }}" dir="{{ dir or (locale == 'en' and 'ltr' or 'rtl') }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
-  <meta name="description" content="{{ excerpt or description or site.description }}">
+  <title>{% if metaTitle %}{{ metaTitle }} | {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ metaDescription }}">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="{{ title or site.name }}">
-  <meta property="og:description" content="{{ excerpt or description or site.description }}">
+  <meta property="og:title" content="{{ metaTitle or site.name }}">
+  <meta property="og:description" content="{{ metaDescription }}">
   <meta property="og:type" content="{% if layout == 'layouts/blog.njk' %}article{% else %}website{% endif %}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   {% if thumbnail %}
@@ -17,11 +19,17 @@
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ title or site.name }}">
-  <meta name="twitter:description" content="{{ excerpt or description or site.description }}">
+  <meta name="twitter:title" content="{{ metaTitle or site.name }}">
+  <meta name="twitter:description" content="{{ metaDescription }}">
   
   <!-- Theme -->
   <meta name="theme-color" content="#1545ae">
+  <link rel="alternate" hreflang="{{ lang or locale }}" href="{{ site.url }}{{ page.url }}">
+  <link rel="alternate" hreflang="{{ locale == 'en' and 'ar' or 'en' }}" href="{{ site.url }}{{ alternateLocaleUrl(page.url, locale) }}">
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap">
   
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/css/style.css">

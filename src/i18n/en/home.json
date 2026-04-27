@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Home",
+    "description": "The BLEU community platform for sharing knowledge, learning together, and building the future of technology."
+  },
+  "hero": {
+    "title": "Building • Learning • Exploring • Uniting",
+    "originalTitle": "Building Learning Exploring Uniting",
+    "description": "A community-driven blog for developers. Share your knowledge, learn from others, and build the future together.",
+    "browseBlogs": "Browse Blogs",
+    "contribute": "Contribute"
+  },
+  "latestPosts": {
+    "title": "Latest Posts",
+    "viewAll": "View all →",
+    "emptyTitle": "No blogs yet. Be the first to contribute!",
+    "submitBlog": "Submit a Blog"
+  },
+  "openSource": {
+    "title": "Open Source Blog",
+    "description": "This blog is fully open source. Anyone can contribute by opening a Pull Request on GitHub. Your blog post will be reviewed by the community and published on merge.",
+    "steps": {
+      "write": {
+        "title": "Fork & Write",
+        "description": "Fork the repo and add your Markdown file to content/blogs/."
+      },
+      "pr": {
+        "title": "Open a PR",
+        "description": "Submit your pull request. The community will review and provide feedback."
+      },
+      "publish": {
+        "title": "Merge = Published",
+        "description": "Once approved and merged, your blog is live! GitHub Actions handles deployment."
+      }
+    }
+  },
+  "discord": {
+    "title": "Join our Discord",
+    "members": "members",
+    "online": "online",
+    "joinServer": "Join Server"
+  }
+}

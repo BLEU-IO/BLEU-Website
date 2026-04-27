@@ -2,58 +2,54 @@
 layout: base.njk
 ---
 <article class="max-w-4xl mx-auto px-4 py-8 animate-fade-in-up">
-  <!-- Header -->
   <header class="mb-8">
     {% if tags %}
-    <div class="flex gap-2 flex-wrap mb-4">
+    <div class="post-tags flex gap-2 flex-wrap mb-4" dir="ltr">
       {% for tag in tags %}
-        <span class="badge">{{ tag }}</span>
+        <span class="badge" dir="ltr">{{ tag }}</span>
       {% endfor %}
     </div>
     {% endif %}
-    
-    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-bleu-950 mb-4">
+
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-bleu-950 mb-4 text-start" dir="auto">
       {{ title }}
     </h1>
-    
-    <div class="flex flex-wrap items-center gap-4 text-bleu-700">
-      <a href="https://github.com/{{ authorGithub }}" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-bleu-900">
-        <img 
-          src="https://github.com/{{ authorGithub }}.png?size=80" 
-          alt="{{ author }}" 
+
+    <div class="post-meta flex flex-wrap items-center gap-4 text-bleu-700" dir="ltr">
+      <a href="https://github.com/{{ authorGithub }}" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-bleu-900" dir="ltr">
+        <img
+          src="https://github.com/{{ authorGithub }}.png?size=80"
+          alt="{{ author }}"
           class="w-10 h-10 rounded-full border-2 border-bleu-200"
           loading="lazy"
         >
-        <span class="font-semibold">{{ author }}</span>
+        <span class="font-semibold" dir="ltr">{{ author }}</span>
       </a>
       <span class="text-bleu-300">•</span>
-      <time datetime="{{ date | dateFormat }}">{{ date | dateFormat }}</time>
+      <time datetime="{{ date | dateIso }}">{{ date | dateFormat(locale) }}</time>
       <span class="text-bleu-300">•</span>
-      <span>{{ content | readingTime }} min read</span>
+      <span>{{ t("blog:post.minutesRead", locale, { count: content | readingTime }) }}</span>
     </div>
   </header>
-  
-  <!-- Thumbnail -->
+
   {% if thumbnail %}
   <div class="mb-8 rounded-lg overflow-hidden">
-    <img 
-      src="{{ thumbnail }}" 
-      alt="{{ title }}" 
+    <img
+      src="{{ thumbnail }}"
+      alt="{{ title }}"
       class="w-full max-h-[500px] object-cover"
       loading="lazy"
     >
   </div>
   {% endif %}
-  
-  <!-- Content -->
-  <div class="prose">
+
+  <div class="prose text-start" dir="auto">
     {{ content | safe }}
   </div>
-  
-  <!-- Share / Edit -->
+
   <div class="flex flex-wrap items-center justify-between border-t border-bleu-200 mt-12 pt-8 gap-4">
-    <a 
-      href="https://github.com/{{ site.repo }}/edit/main/content/blogs/{{ page.fileSlug }}.md"
+    <a
+      href="https://github.com/{{ site.repo }}/edit/master/content/blogs/{{ page.fileSlug }}.md"
       target="_blank"
       rel="noopener"
       class="btn btn-secondary text-sm"
@@ -61,32 +57,31 @@ layout: base.njk
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
       </svg>
-      <span class="btn-label">Edit on GitHub</span>
+      <span class="btn-label">{{ t("blog:post.editOnGithub", locale) }}</span>
     </a>
-    
+
     <div class="flex gap-3">
-      <a 
-        href="https://twitter.com/intent/tweet?text={{ title | urlencode }}&url={{ site.url }}{{ page.url | urlencode }}"
+      <a
+        href="https://twitter.com/intent/tweet?text={{ title | urlencode }}&url={{ (site.url + page.url) | urlencode }}"
         target="_blank"
         rel="noopener"
         class="btn btn-secondary text-sm"
-        aria-label="Share on Twitter"
+        aria-label="{{ t('blog:post.shareOnTwitter', locale) }}"
       >
         <img src="/assets/images/icons/twitter.svg" alt="" class="w-4 h-4" aria-hidden="true">
       </a>
-      <a 
-        href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url | urlencode }}"
+      <a
+        href="https://www.linkedin.com/sharing/share-offsite/?url={{ (site.url + page.url) | urlencode }}"
         target="_blank"
         rel="noopener"
         class="btn btn-secondary text-sm"
-        aria-label="Share on LinkedIn"
+        aria-label="{{ t('blog:post.shareOnLinkedin', locale) }}"
       >
         <img src="/assets/images/icons/linkedin.svg" alt="" class="w-4 h-4 rounded-[2px]" aria-hidden="true">
       </a>
     </div>
   </div>
-  
-  <!-- Comments -->
+
   <section class="mt-12">
     {% include "components/giscus.njk" %}
   </section>

@@ -1,0 +1,29 @@
+{
+  "site": {
+    "communityLabel": "community",
+    "tagline": "Building • Learning • Exploring • Uniting",
+    "description": "A community-driven blog for developers to share knowledge, learn together, and build the future of technology."
+  },
+  "nav": {
+    "home": "Home",
+    "blogs": "Blogs",
+    "joinDiscord": "Join Discord",
+    "contribute": "Contribute",
+    "contributeOnGithub": "Contribute on GitHub",
+    "languageSwitcher": "Select language",
+    "toggleMenu": "Toggle menu"
+  },
+  "footer": {
+    "content": "Content",
+    "allBlogs": "All Blogs",
+    "submitBlog": "Submit a Blog",
+    "community": "Community",
+    "openSource": "Open Source",
+    "issues": "Issues",
+    "copyright": "© 2026 BLEU Community. Open source"
+  },
+  "language": {
+    "arabic": "العربية",
+    "english": "English"
+  }
+}

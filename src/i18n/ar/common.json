@@ -1,0 +1,29 @@
+{
+  "site": {
+    "communityLabel": "مجتمع",
+    "tagline": "نبني • نتعلّم • نستكشف • نتّحد",
+    "description": "مدونة مجتمعية للمطورين لمشاركة المعرفة والتعلم معًا وبناء مستقبل التقنية."
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "blogs": "المدونات",
+    "joinDiscord": "انضم إلى ديسكورد",
+    "contribute": "ساهم",
+    "contributeOnGithub": "ساهم عبر GitHub",
+    "languageSwitcher": "اختيار اللغة",
+    "toggleMenu": "تبديل القائمة"
+  },
+  "footer": {
+    "content": "المحتوى",
+    "allBlogs": "كل المدونات",
+    "submitBlog": "أرسل مدونة",
+    "community": "المجتمع",
+    "openSource": "المصدر المفتوح",
+    "issues": "المشكلات",
+    "copyright": "© 2026 مجتمع BLEU. مفتوح المصدر"
+  },
+  "language": {
+    "arabic": "العربية",
+    "english": "English"
+  }
+}

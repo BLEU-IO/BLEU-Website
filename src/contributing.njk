@@ -1,46 +1,40 @@
 ---
 layout: base.njk
-title: Contributing
-description: How to submit a blog post to the BLEU community
-permalink: /contributing/
 ---
 
 <div class="max-w-3xl mx-auto px-4 py-12">
   <article class="prose">
-    <h1>How to Submit a Blog Post</h1>
-    
-    <p>
-      We welcome contributions from the community! Our blog is fully open-source, 
-      and anyone can submit a post via GitHub Pull Request.
-    </p>
-    
+    <h1>{{ t("contributing:page.title", locale) }}</h1>
+
+    <p>{{ t("contributing:page.intro", locale) }}</p>
+
     <hr>
-    
-    <h2>Quick Start</h2>
-    
+
+    <h2>{{ t("contributing:page.quickStart", locale) }}</h2>
+
     <ol>
-      <li><strong>Fork</strong> the <a href="https://github.com/{{ site.repo }}" target="_blank">repository</a></li>
-      <li><strong>Copy</strong> <code>content/blogs/0template.md</code> to <code>content/blogs/your-title.md</code></li>
-      <li><strong>Edit</strong> your copied file with your blog content</li>
-      <li><strong>Open</strong> a Pull Request</li>
-      <li><strong>Community reviews</strong> your post</li>
-      <li><strong>Merged = Published!</strong></li>
+      <li><strong>{{ t("contributing:steps.fork", locale) }}</strong> {{ t("contributing:list.forkRepository", locale) }} <a href="https://github.com/{{ site.repo }}" target="_blank">{{ t("contributing:list.forkRepo", locale) }}</a></li>
+      <li><strong>{{ t("contributing:steps.copy", locale) }}</strong> <code>content/blogs/0template.md</code> {{ t("contributing:list.copyTo", locale) }} <code>content/blogs/your-title.md</code></li>
+      <li><strong>{{ t("contributing:steps.edit", locale) }}</strong> {{ t("contributing:list.editFile", locale) }}</li>
+      <li><strong>{{ t("contributing:steps.open", locale) }}</strong> {{ t("contributing:list.openPr", locale) }}</li>
+      <li><strong>{{ t("contributing:steps.reviews", locale) }}</strong> {{ t("contributing:list.communityReviews", locale) }}</li>
+      <li><strong>{{ t("contributing:steps.published", locale) }}</strong></li>
     </ol>
-    
-    <h2>Blog Template</h2>
-    
-    <p>Use the ready-to-copy template file:</p>
+
+    <h2>{{ t("contributing:page.blogTemplate", locale) }}</h2>
+
+    <p>{{ t("contributing:page.templateIntro", locale) }}</p>
     <pre><code>cp content/blogs/0template.md content/blogs/your-title.md</code></pre>
-    <p>Then edit the copied file and replace all placeholder values/content.</p>
-    
-    <p>If you prefer, here is the same template inline:</p>
-    
+    <p>{{ t("contributing:page.templateEdit", locale) }}</p>
+
+    <p>{{ t("contributing:page.templateInline", locale) }}</p>
+
     <pre><code>---
-title: "Your Awesome Title"
-author: "Your Name"
+title: "{{ t("contributing:template.title", locale) }}"
+author: "{{ t("contributing:template.author", locale) }}"
 authorGithub: "your-github-username"
 date: 2026-02-14
-excerpt: "A brief description of your post (1-2 sentences)"
+excerpt: "{{ t("contributing:template.excerpt", locale) }}"
 tags:
   - tutorial
   - javascript
@@ -48,11 +42,11 @@ thumbnail: /assets/images/your-image.jpg  # optional
 layout: blog.njk
 ---
 
-Your content here. Use standard Markdown!
+{{ t("contributing:template.body", locale) }}
 
-## Subheadings
+## {{ t("contributing:template.subheadings", locale) }}
 
-Regular paragraphs with **bold** and *italic* text.
+{{ t("contributing:template.paragraph", locale) }}
 
 ### Code Blocks
 
@@ -62,55 +56,56 @@ function hello() {
 }
 ```
 
-### Lists
+### {{ t("contributing:template.lists", locale) }}
 
-- Item one
-- Item two
-- Item three
+- {{ t("contributing:template.itemOne", locale) }}
+- {{ t("contributing:template.itemTwo", locale) }}
+- {{ t("contributing:template.itemThree", locale) }}
 
-### Links and Images
+### {{ t("contributing:template.linksAndImages", locale) }}
 
-[Link text](https://example.com)
+[{{ t("contributing:template.linkText", locale) }}](https://example.com)
 
-![Alt text](/assets/images/example.jpg)</code></pre>
-    
-    <h2>Guidelines</h2>
-    
+![{{ t("contributing:template.altText", locale) }}](/assets/images/example.jpg)</code></pre>
+
+    <h2>{{ t("contributing:page.guidelines", locale) }}</h2>
+
     <ul>
-      <li>Write about tech, learning, open-source, or community topics</li>
-      <li>Keep it respectful and constructive</li>
-      <li>Include code examples where helpful</li>
-      <li>Use clear, descriptive titles</li>
-      <li>Add a thumbnail image if possible (16:9 ratio recommended)</li>
-      <li>Images should be added to <code>/src/assets/images/</code></li>
+      <li>{{ t("contributing:list.guideline1", locale) }}</li>
+      <li>{{ t("contributing:list.guideline2", locale) }}</li>
+      <li>{{ t("contributing:list.guideline3", locale) }}</li>
+      <li>{{ t("contributing:list.guideline4", locale) }}</li>
+      <li>{{ t("contributing:list.guideline5", locale) }}</li>
+      <li>{{ t("contributing:list.guideline6", locale) }} <code>/src/assets/images/</code></li>
     </ul>
-    
-    <h2>File Naming</h2>
-    
-    <p>Name your file using kebab-case:</p>
+
+    <h2>{{ t("contributing:page.fileNaming", locale) }}</h2>
+
+    <p>{{ t("contributing:page.fileNamingIntro", locale) }}</p>
     <ul>
-      <li><code>getting-started-with-rust.md</code></li>
-      <li><code>my-open-source-journey.md</code></li>
-      <li><code>My Blog Post.md</code> (Avoid spaces)</li>
-      <li><code>post1.md</code> (Avoid generic names)</li>
+      <li><code>{{ t("contributing:list.fileGood1", locale) }}</code></li>
+      <li><code>{{ t("contributing:list.fileGood2", locale) }}</code></li>
+      <li><code>{{ t("contributing:list.fileBad1", locale) }}</code></li>
+      <li><code>{{ t("contributing:list.fileBad2", locale) }}</code></li>
     </ul>
-    
-    <h2>Review Process</h2>
-    
+
+    <h2>{{ t("contributing:page.reviewProcess", locale) }}</h2>
+
     <ol>
-      <li>Open your Pull Request</li>
-      <li>Maintainers will review for quality and guidelines</li>
-      <li>You may receive feedback or suggestions</li>
-      <li>Once approved, your PR is merged</li>
-      <li>GitHub Actions builds and deploys automatically</li>
-      <li>Your blog is live within minutes!</li>
+      <li>{{ t("contributing:list.review1", locale) }}</li>
+      <li>{{ t("contributing:list.review2", locale) }}</li>
+      <li>{{ t("contributing:list.review3", locale) }}</li>
+      <li>{{ t("contributing:list.review4", locale) }}</li>
+      <li>{{ t("contributing:list.review5", locale) }}</li>
+      <li>{{ t("contributing:list.review6", locale) }}</li>
     </ol>
-    
-    <h2>Questions?</h2>
-    
+
+    <h2>{{ t("contributing:page.questions", locale) }}</h2>
+
     <p>
-      Join our <a href="{{ site.discord.invite }}" target="_blank">Discord</a> 
-      and ask in <code>#blog-submissions</code>!
+      {{ t("contributing:page.questionsBody", locale) }}
+      <a href="{{ site.discord.invite }}" target="_blank">Discord</a>
+      {{ t("contributing:page.questionsSuffix", locale) }}
     </p>
   </article>
 </div>

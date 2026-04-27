@@ -1,9 +1,10 @@
 <div class="giscus-wrapper">
-  <h2 class="text-2xl font-bold text-bleu-950 mb-6">Comments</h2>
+  <h2 class="text-2xl font-bold text-bleu-950 mb-6">{{ t("blog:post.comments", locale) }}</h2>
   <p class="text-bleu-700 text-sm mb-4">
-    Comments are powered by <a href="https://giscus.app" target="_blank" rel="noopener">giscus</a> and stored in GitHub Discussions.
+    {{ t("blog:post.commentsDescription", locale) }}
+    <a href="https://giscus.app" target="_blank" rel="noopener">giscus</a>.
   </p>
-  <script 
+  <script
     src="https://giscus.app/client.js"
     data-repo="{{ site.repo }}"
     data-repo-id="R_kgDORM0sEA"
@@ -15,7 +16,7 @@
     data-emit-metadata="0"
     data-input-position="top"
     data-theme="light"
-    data-lang="en"
+    data-lang="{{ locale }}"
     data-loading="lazy"
     crossorigin="anonymous"
     async>

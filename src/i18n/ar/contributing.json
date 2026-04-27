@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "title": "المساهمة",
+    "description": "تعرّف على كيفية إرسال مدونة إلى مجتمع BLEU."
+  },
+  "page": {
+    "title": "كيفية إرسال مدونة",
+    "intro": "نرحب بمساهمات المجتمع! مدونتنا مفتوحة المصدر بالكامل، ويمكن لأي شخص إرسال مدونة عبر طلب دمج على GitHub.",
+    "quickStart": "البدء السريع",
+    "blogTemplate": "قالب المدونة",
+    "templateIntro": "استخدم ملف القالب الجاهز للنسخ:",
+    "templateEdit": "بعد ذلك عدّل الملف المنسوخ واستبدل جميع القيم والمحتوى الافتراضي.",
+    "templateInline": "إذا كنت تفضّل، فهذا هو القالب نفسه داخل الصفحة:",
+    "guidelines": "الإرشادات",
+    "fileNaming": "تسمية الملفات",
+    "fileNamingIntro": "استخدم أسلوب kebab-case عند تسمية الملف:",
+    "reviewProcess": "آلية المراجعة",
+    "questions": "هل لديك أسئلة؟",
+    "questionsBody": "انضم إلى",
+    "questionsSuffix": "واسأل في #blog-submissions!"
+  },
+  "steps": {
+    "fork": "انسخ",
+    "copy": "انسخ",
+    "edit": "عدّل",
+    "open": "افتح",
+    "reviews": "يراجع المجتمع",
+    "published": "تم الدمج = تم النشر!"
+  },
+  "list": {
+    "forkRepository": "المستودع",
+    "copyFrom": "انسخ",
+    "copyTo": "إلى",
+    "forkRepo": "المستودع",
+    "copyTemplate": "content/blogs/0template.md إلى content/blogs/your-title.md",
+    "editFile": "الملف المنسوخ وضع محتوى المدونة",
+    "openPr": "طلب دمج",
+    "communityReviews": "مدونتك",
+    "guideline1": "اكتب عن التقنية، أو التعلّم، أو المصادر المفتوحة، أو المجتمع",
+    "guideline2": "حافظ على الاحترام والبناء",
+    "guideline3": "أضف أمثلة برمجية عند الحاجة",
+    "guideline4": "استخدم عناوين واضحة ومعبرة",
+    "guideline5": "أضف صورة مصغرة إن أمكن (يُفضّل نسبة 16:9)",
+    "guideline6": "أضف الصور داخل",
+    "fileGood1": "getting-started-with-rust.md",
+    "fileGood2": "my-open-source-journey.md",
+    "fileBad1": "My Blog Post.md (تجنب المسافات)",
+    "fileBad2": "post1.md (تجنب الأسماء العامة)",
+    "review1": "افتح طلب الدمج الخاص بك",
+    "review2": "سيراجع المشرفون الجودة والالتزام بالإرشادات",
+    "review3": "قد تتلقى ملاحظات أو اقتراحات",
+    "review4": "بعد الموافقة، يتم دمج طلب الدمج",
+    "review5": "تتولى GitHub Actions البناء والنشر تلقائيًا",
+    "review6": "تصبح مدونتك منشورة خلال دقائق!"
+  },
+  "template": {
+    "title": "عنوانك المميز",
+    "author": "اسمك",
+    "excerpt": "وصف مختصر لمدونتك (من جملة إلى جملتين)",
+    "body": "ضع محتواك هنا. يمكنك استخدام Markdown القياسي!",
+    "subheadings": "عناوين فرعية",
+    "paragraph": "فقرات عادية مع نص غامق ومائل.",
+    "lists": "قوائم",
+    "itemOne": "العنصر الأول",
+    "itemTwo": "العنصر الثاني",
+    "itemThree": "العنصر الثالث",
+    "linksAndImages": "الروابط والصور",
+    "linkText": "نص الرابط",
+    "altText": "نص بديل"
+  }
+}

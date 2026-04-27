@@ -1,3 +1,5 @@
+@import "prismjs/themes/prism-okaidia.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,6 +13,15 @@
     @apply antialiased text-bleu-950;
     background: linear-gradient(to bottom, #ffffff, #f0f9ff);
     min-height: 100vh;
+    font-family: "Manrope", "Segoe UI", sans-serif;
+  }
+
+  [dir="rtl"] body {
+    direction: rtl;
+  }
+
+  html[lang="ar"] body {
+    font-family: "IBM Plex Sans Arabic", "Segoe UI", sans-serif;
   }
 
   a {
@@ -51,11 +62,45 @@
   .badge {
     @apply inline-block px-3 py-1 text-xs font-semibold rounded-full bg-bleu-100 text-bleu-700;
   }
+
+  .lang-switcher {
+    @apply rounded-lg border border-bleu-200 bg-white py-2 text-sm font-medium text-bleu-700 focus:border-bleu-400 focus:outline-none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%231545ae' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+  }
+}
+
+html[dir="ltr"] .lang-switcher {
+  background-position: right 0.75rem center;
+  padding-left: 0.75rem;
+  padding-right: 2.5rem;
+}
+
+html[dir="rtl"] .lang-switcher {
+  background-position: left 0.75rem center;
+  padding-right: 0.75rem;
+  padding-left: 2.5rem;
 }
 
 /* Markdown content styling - matches original BLEU */
 .prose {
   @apply text-bleu-950 max-w-none;
+}
+
+.prose :where(h1, h2, h3, h4, h5, h6, p, li, blockquote, pre, code, table, td, th) {
+  unicode-bidi: plaintext;
+  text-align: start;
+}
+
+.post-meta {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.post-tags {
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .prose h1 {
@@ -79,11 +124,11 @@
 }
 
 .prose ul {
-  @apply list-disc list-outside pl-6 mb-5 space-y-2 text-bleu-950;
+  @apply list-disc list-outside ps-6 mb-5 space-y-2 text-bleu-950;
 }
 
 .prose ol {
-  @apply list-decimal list-outside pl-6 mb-5 space-y-2 text-bleu-950;
+  @apply list-decimal list-outside ps-6 mb-5 space-y-2 text-bleu-950;
 }
 
 .prose li {
@@ -95,7 +140,7 @@
 }
 
 .prose blockquote {
-  @apply border-l-4 border-bleu-400 pl-4 py-2 my-4 italic bg-bleu-50 text-bleu-800 rounded-r-lg;
+  @apply border-s-4 border-bleu-400 ps-4 py-2 my-4 italic bg-bleu-50 text-bleu-800 rounded-e-lg;
 }
 
 .prose hr {
@@ -111,7 +156,7 @@
 }
 
 .prose th {
-  @apply border border-bleu-200 p-3 bg-bleu-100 font-semibold text-left text-bleu-950;
+  @apply border border-bleu-200 p-3 bg-bleu-100 font-semibold text-start text-bleu-950;
 }
 
 .prose td {
@@ -122,25 +167,90 @@
   @apply border-b border-bleu-200;
 }
 
-.prose code {
-  @apply bg-bleu-900 rounded px-1.5 py-0.5 text-sm text-white font-mono;
-}
-
-.prose pre {
-  @apply rounded-lg overflow-x-auto my-6;
-}
-
-.prose pre code {
-  @apply bg-transparent p-0;
-}
-
 .prose img {
   @apply rounded-lg my-6 max-w-full h-auto;
 }
 
-/* Code highlighting theme overrides */
-.prose pre[class*="language-"] {
-  @apply bg-bleu-950 rounded-lg p-4;
+/* Diff highlighting lines */
+.token.deleted {
+  background-color: rgba(255, 0, 0, 0.15);
+  color: #ff6b6b;
+}
+
+.token.inserted {
+  background-color: rgba(0, 255, 0, 0.15);
+  color: #51cf66;
+}
+
+/* Display language name for the code block */
+pre[class*="language-"] {
+  position: relative;
+}
+
+pre[class*="language-"]::before {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
+  color: #ccc;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px 6px;
+  border-radius: 6px;
+  text-transform: capitalize;
+}
+
+/* Language labels */
+pre.language-js::before {
+  content: "JS";
+}
+pre.language-ts::before {
+  content: "TS";
+}
+pre.language-python::before {
+  content: "Python";
+}
+pre.language-php::before {
+  content: "PHP";
+}
+pre.language-html::before {
+  content: "HTML";
+}
+pre.language-css::before {
+  content: "CSS";
+}
+pre.language-bash::before {
+  content: "Bash";
+}
+pre.language-json::before {
+  content: "JSON";
+}
+pre.language-sql::before {
+  content: "SQL";
+}
+pre.language-java::before {
+  content: "JAVA";
+}
+pre.language-rust::before {
+  content: "RUST";
+}
+pre.language-cpp::before {
+  content: "C++";
+}
+pre.language-c::before {
+  content: "C";
+}
+pre.language-csharp::before {
+  content: "C#";
+}
+pre.language-diff::before {
+  content: "DIFF";
+}
+pre.language-example::before {
+  content: "example";
 }
 
 /* Grid pattern background */
