@@ -51,4 +51,24 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    const scrollPlayVideos = document.querySelectorAll("video[data-scroll-play]");
+
+    if ("IntersectionObserver" in window) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                const video = entry.target;
+
+                if (entry.isIntersecting) {
+                    video.play().catch(() => {
+                        // Browsers can still block playback; controls remain available.
+                    });
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.35 });
+
+        scrollPlayVideos.forEach((video) => videoObserver.observe(video));
+    }
 });
