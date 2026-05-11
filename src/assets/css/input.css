@@ -1,4 +1,5 @@
 @import "prismjs/themes/prism-okaidia.css";
+@import "katex/dist/katex.min.css";
 
 @tailwind base;
 @tailwind components;
@@ -85,10 +86,11 @@ html[dir="rtl"] .lang-switcher {
 
 /* Markdown content styling - matches original BLEU */
 .prose {
-  @apply text-bleu-950 max-w-none;
+  @apply text-bleu-950 max-w-none text-lg;
+  overflow-wrap: break-word;
 }
 
-.prose :where(h1, h2, h3, h4, h5, h6, p, li, blockquote, pre, code, table, td, th) {
+.prose :where(h1, h2, h3, h4, h5, h6, p, li, blockquote, pre, code, table, td, th, figcaption) {
   unicode-bidi: plaintext;
   text-align: start;
 }
@@ -120,7 +122,7 @@ html[dir="rtl"] .lang-switcher {
 }
 
 .prose p {
-  @apply mb-5 leading-relaxed text-bleu-950;
+  @apply mb-6 leading-relaxed text-bleu-950;
 }
 
 .prose ul {
@@ -132,7 +134,7 @@ html[dir="rtl"] .lang-switcher {
 }
 
 .prose li {
-  @apply text-bleu-950;
+  @apply text-bleu-950 leading-relaxed;
 }
 
 .prose a {
@@ -140,7 +142,7 @@ html[dir="rtl"] .lang-switcher {
 }
 
 .prose blockquote {
-  @apply border-s-4 border-bleu-400 ps-4 py-2 my-4 italic bg-bleu-50 text-bleu-800 rounded-e-lg;
+  @apply border-s-4 border-bleu-400 ps-5 py-3 my-6 italic bg-bleu-50 text-bleu-800 rounded-e-lg;
 }
 
 .prose hr {
@@ -169,6 +171,60 @@ html[dir="rtl"] .lang-switcher {
 
 .prose img {
   @apply rounded-lg my-6 max-w-full h-auto;
+}
+
+.prose figure {
+  @apply my-8;
+}
+
+.prose figure img,
+.prose figure video {
+  @apply mx-auto my-0 w-full rounded-lg border border-bleu-100 shadow-sm;
+}
+
+.prose figure video {
+  @apply bg-bleu-950;
+}
+
+.prose figure img.article-portrait-figure {
+  max-height: 680px;
+  width: auto;
+  object-fit: contain;
+}
+
+.prose figcaption {
+  @apply mt-3 text-sm leading-relaxed text-bleu-600;
+}
+
+.prose .sentence-callout {
+  @apply border-s-4 border-bleu-300 ps-5 py-2 my-6 not-italic bg-transparent;
+}
+
+.prose .sentence-callout p {
+  @apply mb-2 text-bleu-800;
+}
+
+.prose .sentence-callout p:last-child {
+  @apply mb-0;
+}
+
+.prose .sentence-callout code {
+  @apply block whitespace-pre-wrap bg-transparent p-0 text-base md:text-lg leading-relaxed text-bleu-950;
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+.prose .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.25rem;
+}
+
+.prose .katex {
+  font-size: 1.1em;
+}
+
+.prose .katex-display > .katex {
+  font-size: 1.22em;
 }
 
 /* Diff highlighting lines */

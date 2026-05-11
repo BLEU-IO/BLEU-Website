@@ -1,4 +1,6 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const markdownIt = require("markdown-it");
+const markdownItKatex = require("@iktakahiro/markdown-it-katex");
 const {
     createI18nInstance,
     localizeUrl,
@@ -12,9 +14,15 @@ module.exports = function (eleventyConfig) {
     // Plugins
     eleventyConfig.addPlugin(syntaxHighlight);
 
+    const markdownLibrary = markdownIt({ html: true }).use(markdownItKatex, {
+        throwOnError: false
+    });
+    eleventyConfig.setLibrary("md", markdownLibrary);
+
     // Copy static assets to public paths used by templates
     eleventyConfig.addPassthroughCopy({ "src/assets/images": "assets/images" });
     eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
+    eleventyConfig.addPassthroughCopy({ "node_modules/katex/dist/fonts": "assets/css/fonts" });
 
     function getBlogPosts(collectionApi) {
         return collectionApi.getFilteredByGlob("content/blogs/*.md")
