@@ -26,7 +26,7 @@ for (const page of pages) {
 
 const postFiles = fs.readdirSync(blogDir)
     .filter((file) => file.endsWith(".md") && file !== "0template.md")
-    .map((file) => path.basename(file, ".md"));
+    .map((file) => path.basename(file, ".md").replace(/^\d{4}-\d{2}-\d{2}-/, ""));
 
 for (const slug of postFiles) {
     ensureExists(path.join("blogs", slug, "index.html"));
