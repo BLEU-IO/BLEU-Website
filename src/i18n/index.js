@@ -47,7 +47,7 @@ function createI18nInstance() {
 
     instance.init({
         resources,
-        lng: "ar",
+        lng: "en",
         fallbackLng: false,
         initImmediate: false,
         interpolation: {
@@ -147,24 +147,20 @@ function getLocaleConfig(locale) {
 
 function localizeUrl(url, locale) {
     if (!url || typeof url !== "string") {
-        return locale === "en" ? "/en/" : "/";
+        return locale === "ar" ? "/ar/" : "/";
     }
 
     const normalized = url === "/" ? "/" : url.replace(/\/+$/, "") + "/";
 
-    if (locale === "en") {
-        if (normalized === "/") {
-            return "/en/";
-        }
-
-        return normalized.startsWith("/en/") ? normalized : `/en${normalized}`;
+    if (locale === "ar") {
+        return normalized.startsWith("/ar/") ? normalized : `/ar${normalized}`;
     }
 
-    if (normalized === "/en/") {
+    if (normalized === "/ar/") {
         return "/";
     }
 
-    return normalized.startsWith("/en/") ? normalized.replace(/^\/en/, "") || "/" : normalized;
+    return normalized.startsWith("/ar/") ? normalized.replace(/^\/ar/, "") || "/" : normalized;
 }
 
 module.exports = {

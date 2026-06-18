@@ -10,7 +10,7 @@
     "build:11ty": "eleventy",
     "watch:11ty": "eleventy --serve",
     "verify:i18n-build": "node scripts/verify-localized-build.js",
-    "build": "npm run check:i18n && npm run build:css && npm run build:11ty && npm run verify:i18n-build",
+    "build": "npm run clean && npm run check:i18n && npm run build:css && npm run build:11ty && npm run verify:i18n-build",
     "dev": "npm-run-all --parallel watch:*",
     "clean": "rm -rf _site"
   },
