@@ -47,7 +47,7 @@ module.exports = function (eleventyConfig) {
     });
 
     // Date formatting filter
-    eleventyConfig.addFilter("dateFormat", function (date, locale = "ar") {
+    eleventyConfig.addFilter("dateFormat", function (date, locale = "en") {
         return new Date(date).toLocaleDateString(locale === "en" ? "en-US" : "ar-EG", {
             year: "numeric",
             month: "long",
@@ -78,7 +78,7 @@ module.exports = function (eleventyConfig) {
         return arr.slice(0, limit);
     });
 
-    eleventyConfig.addNunjucksGlobal("t", function (key, locale = "ar", options = {}) {
+    eleventyConfig.addNunjucksGlobal("t", function (key, locale = "en", options = {}) {
         if (!i18n.exists(key, { lng: locale })) {
             throw new Error(`Missing translation key "${key}" for locale "${locale}".`);
         }
@@ -86,11 +86,11 @@ module.exports = function (eleventyConfig) {
         return i18n.t(key, { lng: locale, ...options });
     });
 
-    eleventyConfig.addNunjucksGlobal("localeUrl", function (url, locale = "ar") {
+    eleventyConfig.addNunjucksGlobal("localeUrl", function (url, locale = "en") {
         return localizeUrl(url, locale);
     });
 
-    eleventyConfig.addNunjucksGlobal("alternateLocaleUrl", function (url, locale = "ar") {
+    eleventyConfig.addNunjucksGlobal("alternateLocaleUrl", function (url, locale = "en") {
         return localizeUrl(url, locale === "en" ? "ar" : "en");
     });
 

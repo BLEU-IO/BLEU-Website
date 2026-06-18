@@ -1,0 +1,25 @@
+---
+pagination:
+  data: enRedirects
+  size: 1
+  alias: redirect
+permalink: "{{ redirect.from }}"
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting | BLEU Community</title>
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url={{ redirect.to }}">
+  <link rel="canonical" href="{{ site.url }}{{ redirect.to }}">
+</head>
+<body>
+  <p>Redirecting to <a href="{{ redirect.to }}">{{ redirect.to }}</a>.</p>
+  <script>
+    window.location.replace("{{ redirect.to }}");
+  </script>
+</body>
+</html>

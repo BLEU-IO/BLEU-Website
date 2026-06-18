@@ -8,7 +8,7 @@ module.exports = {
         locale: (data) => data.localeData.code,
         lang: (data) => data.localeData.lang,
         dir: (data) => data.localeData.dir,
-        permalink: (data) => data.localeData.code === "en" ? "/en/blogs/" : "/blogs/",
+        permalink: (data) => `${data.localeData.prefix}/blogs/`.replace(/^\/\//, "/"),
         pageTitleKey: () => "blogs:meta.title",
         pageDescriptionKey: () => "blogs:meta.description"
     }

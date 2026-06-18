@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const currentLocale = window.location.pathname.startsWith("/en/") || window.location.pathname === "/en/"
-        ? "en"
-        : "ar";
+    const currentLocale = window.location.pathname.startsWith("/ar/") || window.location.pathname === "/ar/"
+        ? "ar"
+        : "en";
 
     try {
         window.localStorage.setItem("bleu-locale", currentLocale);
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".lang-switcher").forEach((switcher) => {
         switcher.addEventListener("change", (event) => {
             const targetUrl = event.target.value;
-            const targetLocale = targetUrl.startsWith("/en/") || targetUrl === "/en/" ? "en" : "ar";
+            const targetLocale = targetUrl.startsWith("/ar/") || targetUrl === "/ar/" ? "ar" : "en";
 
             try {
                 window.localStorage.setItem("bleu-locale", targetLocale);

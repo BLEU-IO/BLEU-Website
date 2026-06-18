@@ -11,7 +11,7 @@ module.exports = {
         dir: (data) => data.localeData.dir,
         permalink: (data) => {
             const slug = data.page.fileSlug;
-            return data.localeData.code === "en" ? `/en/blogs/${slug}/` : `/blogs/${slug}/`;
+            return `${data.localeData.prefix}/blogs/${slug}/`.replace(/^\/\//, "/");
         }
     }
 };
