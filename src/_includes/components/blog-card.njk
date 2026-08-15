@@ -1,15 +1,4 @@
 <a href="{{ localeUrl(post.url, locale) }}" class="card group hover:shadow-md hover:border-bleu-200 transition-all flex h-full flex-col" data-tags="{{ post.data.tags | join(',') }}">
-  <div class="mb-4 -mx-6 -mt-6 h-48 {% if post.data.thumbnail %}overflow-hidden rounded-t-2xl{% endif %}">
-    {% if post.data.thumbnail %}
-    <img
-      src="{{ post.data.thumbnail }}"
-      alt="{{ post.data.title }}"
-      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-      loading="lazy"
-    >
-    {% endif %}
-  </div>
-
   <div class="flex flex-1 flex-col">
     {% if post.data.tags %}
     <div class="post-tags flex gap-2 flex-wrap mb-3" dir="ltr">
