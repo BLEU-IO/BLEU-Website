@@ -1,3 +1,14 @@
+---
+title: "SEO Spam Injection: How Trusted Domains Get Exploited"
+author: "Mohamed Mrgeek"
+authorGithub: "m7mdmrgeek-eng"
+date: 2026-02-14
+excerpt: "A technical deep dive into Promotional Infection and how search engine trust can be abused."
+tags:
+  - security
+  - seo
+layout: blog.njk
+---
 
  السلام عليكم ورحمة الله وبركاته
 
