@@ -37,5 +37,8 @@
     "@iktakahiro/markdown-it-katex": "^4.0.1",
     "i18next": "^25.6.0",
     "katex": "^0.16.45"
+  },
+  "overrides": {
+    "markdown-it": "^14.3.3"
   }
 }
