@@ -1,4 +1,4 @@
-<a href="{{ localeUrl(post.url, locale) }}" class="card group hover:shadow-md hover:border-bleu-200 transition-all flex h-full flex-col" data-tags="{{ post.data.tags | join(',') }}">
+<a href="{{ localeUrl(post.url, locale) }}" class="card group hover:shadow-md hover:border-bleu-200 transition-all flex h-full flex-col dark:hover:border-bleu-700" data-tags="{{ post.data.tags | join(',') }}">
   <div class="flex flex-1 flex-col">
     {% if post.data.tags %}
     <div class="post-tags flex gap-2 flex-wrap mb-3" dir="ltr">
@@ -8,15 +8,15 @@
     </div>
     {% endif %}
 
-    <h3 class="text-xl font-bold text-bleu-950 group-hover:text-bleu-700 transition-colors mb-2 text-start" dir="auto">
+    <h3 class="text-xl font-bold text-bleu-950 group-hover:text-bleu-700 transition-colors mb-2 text-start dark:text-white dark:group-hover:text-bleu-300" dir="auto">
       {{ post.data.title }}
     </h3>
 
-    <p class="text-bleu-700 text-sm mb-4 line-clamp-2 text-start" dir="auto">
+    <p class="text-bleu-700 text-sm mb-4 line-clamp-2 text-start dark:text-bleu-200" dir="auto">
       {{ post.data.excerpt or post.templateContent | excerpt }}
     </p>
 
-    <div class="mt-auto flex items-center justify-between text-sm text-bleu-600 gap-4">
+    <div class="mt-auto flex items-center justify-between text-sm text-bleu-600 gap-4 dark:text-bleu-300">
       <div class="flex items-center gap-2 min-w-0">
         <img
           src="https://github.com/{{ post.data.authorGithub }}.png?size=40"

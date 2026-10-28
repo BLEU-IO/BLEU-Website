@@ -23,7 +23,20 @@
   <meta name="twitter:description" content="{{ metaDescription }}">
   
   <!-- Theme -->
-  <meta name="theme-color" content="#1545ae">
+  <script>
+    (function () {
+      try {
+        var stored = window.localStorage.getItem("bleu-theme");
+        var dark = stored ? stored === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (dark) document.documentElement.classList.add("dark");
+      } catch (error) {
+        // Ignore storage failures and keep the light default.
+      }
+    })();
+  </script>
+  <meta name="theme-color" content="#1545ae" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#050a1c" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
   <link rel="alternate" hreflang="{{ lang or locale }}" href="{{ site.url }}{{ page.url }}">
   <link rel="alternate" hreflang="{{ locale == 'en' and 'ar' or 'en' }}" href="{{ site.url }}{{ alternateLocaleUrl(page.url, locale) }}">
   <link rel="alternate" hreflang="x-default" href="{{ site.url }}/">

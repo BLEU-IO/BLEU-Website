@@ -6,18 +6,18 @@ layout: base.njk
 
 <div class="max-w-6xl mx-auto px-4 py-12">
   <header class="mb-10">
-    <h1 class="text-3xl md:text-4xl font-bold text-bleu-950 mb-4">{{ t("blogs:header.title", locale) }}</h1>
-    <p class="text-bleu-700 max-w-2xl">
+    <h1 class="text-3xl md:text-4xl font-bold text-bleu-950 mb-4 dark:text-white">{{ t("blogs:header.title", locale) }}</h1>
+    <p class="text-bleu-700 max-w-2xl dark:text-bleu-200">
       {{ t("blogs:header.description", locale) }}
-      <a href="{{ localeUrl('/contributing/', locale) }}" class="underline hover:text-bleu-900">{{ t("blogs:header.submitViaPr", locale) }}</a>.
+      <a href="{{ localeUrl('/contributing/', locale) }}" class="underline hover:text-bleu-900 dark:hover:text-white">{{ t("blogs:header.submitViaPr", locale) }}</a>.
     </p>
   </header>
 
   {% if collections.blogTags.length > 0 %}
   <div class="flex flex-wrap gap-2 mb-8 items-center">
-    <span class="text-sm text-bleu-600 font-medium me-2">{{ t("blogs:filter.label", locale) }}</span>
+    <span class="text-sm text-bleu-600 font-medium me-2 dark:text-bleu-200">{{ t("blogs:filter.label", locale) }}</span>
     {% for tag in collections.blogTags %}
-      <a href="#" class="badge hover:bg-bleu-200 transition-colors" data-tag="{{ tag }}">{{ tag }}</a>
+      <a href="#" class="badge hover:bg-bleu-200 transition-colors dark:hover:bg-bleu-800" data-tag="{{ tag }}">{{ tag }}</a>
     {% endfor %}
   </div>
   {% endif %}
@@ -27,8 +27,8 @@ layout: base.njk
       {% include "components/blog-card.njk" %}
     {% else %}
       <div class="col-span-full card text-center py-12">
-        <p class="text-bleu-700 text-lg mb-4">{{ t("blogs:empty.title", locale) }}</p>
-        <p class="text-bleu-600 mb-6">{{ t("blogs:empty.description", locale) }}</p>
+        <p class="text-bleu-700 text-lg mb-4 dark:text-bleu-200">{{ t("blogs:empty.title", locale) }}</p>
+        <p class="text-bleu-600 mb-6 dark:text-bleu-300">{{ t("blogs:empty.description", locale) }}</p>
         <a href="{{ localeUrl('/contributing/', locale) }}" class="btn btn-primary">
           <span class="btn-label">{{ t("blogs:empty.submitBlog", locale) }}</span>
         </a>

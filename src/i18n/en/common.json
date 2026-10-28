@@ -11,7 +11,8 @@
     "contribute": "Contribute",
     "contributeOnGithub": "Contribute on GitHub",
     "languageSwitcher": "Select language",
-    "toggleMenu": "Toggle menu"
+    "toggleMenu": "Toggle menu",
+    "toggleTheme": "Toggle dark mode"
   },
   "footer": {
     "content": "Content",

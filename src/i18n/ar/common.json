@@ -11,7 +11,8 @@
     "contribute": "ساهم",
     "contributeOnGithub": "ساهم عبر GitHub",
     "languageSwitcher": "اختيار اللغة",
-    "toggleMenu": "تبديل القائمة"
+    "toggleMenu": "تبديل القائمة",
+    "toggleTheme": "تبديل الوضع الداكن"
   },
   "footer": {
     "content": "المحتوى",

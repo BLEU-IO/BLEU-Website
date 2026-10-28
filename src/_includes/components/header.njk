@@ -1,17 +1,17 @@
-<header class="sticky top-0 z-50 w-full border-b border-bleu-200/70 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+<header class="sticky top-0 z-50 w-full border-b border-bleu-200/70 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-bleu-900/70 dark:bg-night-950/80 dark:supports-[backdrop-filter]:bg-night-950/60">
   <div class="max-w-6xl mx-auto px-4 py-4">
     <nav class="flex items-center justify-between gap-4">
       <a href="{{ localeUrl('/', locale) }}" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
         <img src="/assets/images/logo.svg" alt="BLEU" class="w-10 h-10 rounded">
         <div>
-          <div class="text-base font-semibold text-bleu-950">{{ t("common:site.communityLabel", locale) }}</div>
-          <div class="text-[11px] text-bleu-600">{{ t("common:site.tagline", locale) }}</div>
+          <div class="text-base font-semibold text-bleu-950 dark:text-white">{{ t("common:site.communityLabel", locale) }}</div>
+          <div class="text-[11px] text-bleu-600 dark:text-bleu-300">{{ t("common:site.tagline", locale) }}</div>
         </div>
       </a>
 
       <div class="hidden md:flex items-center gap-4 lg:gap-6">
-        <a href="{{ localeUrl('/blogs/', locale) }}" class="text-sm text-bleu-700 hover:text-bleu-900 font-medium">{{ t("common:nav.blogs", locale) }}</a>
-        <a href="{{ site.discord.invite }}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-bleu-700 hover:text-bleu-900 font-medium">
+        <a href="{{ localeUrl('/blogs/', locale) }}" class="text-sm text-bleu-700 hover:text-bleu-900 font-medium dark:text-bleu-200 dark:hover:text-white">{{ t("common:nav.blogs", locale) }}</a>
+        <a href="{{ site.discord.invite }}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-bleu-700 hover:text-bleu-900 font-medium dark:text-bleu-200 dark:hover:text-white">
           <img src="/assets/images/icons/discord.svg" alt="" class="w-4 h-4" aria-hidden="true">
           {{ t("common:nav.joinDiscord", locale) }}
         </a>
@@ -23,10 +23,18 @@
           <option value="{{ localeUrl(page.url, 'ar') }}" {% if locale == 'ar' %}selected{% endif %}>{{ t("common:language.arabic", locale) }}</option>
           <option value="{{ localeUrl(page.url, 'en') }}" {% if locale == 'en' %}selected{% endif %}>{{ t("common:language.english", locale) }}</option>
         </select>
+        <button
+          type="button"
+          class="theme-toggle p-2 rounded-lg border border-bleu-200 text-bleu-700 hover:bg-bleu-50 transition-colors dark:border-bleu-800 dark:text-bleu-300 dark:hover:bg-night-800"
+          aria-label="{{ t('common:nav.toggleTheme', locale) }}"
+        >
+          <svg class="theme-toggle-icon-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg>
+          <svg class="theme-toggle-icon-sun w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636A9 9 0 1112 21a9 9 0 01-6.364-15.364z"/></svg>
+        </button>
       </div>
 
       <button
-        class="md:hidden p-2 text-bleu-700 hover:bg-bleu-50 rounded-lg"
+        class="md:hidden p-2 text-bleu-700 hover:bg-bleu-50 rounded-lg dark:text-bleu-200 dark:hover:bg-night-800"
         onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
         aria-label="{{ t('common:nav.toggleMenu', locale) }}"
       >
@@ -36,18 +44,28 @@
       </button>
     </nav>
 
-    <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-bleu-100 pt-4">
+    <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-bleu-100 pt-4 dark:border-bleu-900">
       <div class="flex flex-col gap-4">
-        <a href="{{ localeUrl('/blogs/', locale) }}" class="text-bleu-700 hover:text-bleu-900 font-medium">{{ t("common:nav.blogs", locale) }}</a>
-        <a href="{{ site.discord.invite }}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-bleu-700 hover:text-bleu-900 font-medium">
+        <a href="{{ localeUrl('/blogs/', locale) }}" class="text-bleu-700 hover:text-bleu-900 font-medium dark:text-bleu-200 dark:hover:text-white">{{ t("common:nav.blogs", locale) }}</a>
+        <a href="{{ site.discord.invite }}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-bleu-700 hover:text-bleu-900 font-medium dark:text-bleu-200 dark:hover:text-white">
           <img src="/assets/images/icons/discord.svg" alt="" class="w-4 h-4" aria-hidden="true">
           {{ t("common:nav.joinDiscord", locale) }}
         </a>
-        <a href="{{ localeUrl('/contributing/', locale) }}" class="text-bleu-700 hover:text-bleu-900 font-medium">{{ t("common:nav.contribute", locale) }}</a>
-        <select class="lang-switcher" aria-label="{{ t('common:nav.languageSwitcher', locale) }}">
-          <option value="{{ localeUrl(page.url, 'ar') }}" {% if locale == 'ar' %}selected{% endif %}>{{ t("common:language.arabic", locale) }}</option>
-          <option value="{{ localeUrl(page.url, 'en') }}" {% if locale == 'en' %}selected{% endif %}>{{ t("common:language.english", locale) }}</option>
-        </select>
+        <a href="{{ localeUrl('/contributing/', locale) }}" class="text-bleu-700 hover:text-bleu-900 font-medium dark:text-bleu-200 dark:hover:text-white">{{ t("common:nav.contribute", locale) }}</a>
+        <div class="flex items-center gap-4">
+          <select class="lang-switcher" aria-label="{{ t('common:nav.languageSwitcher', locale) }}">
+            <option value="{{ localeUrl(page.url, 'ar') }}" {% if locale == 'ar' %}selected{% endif %}>{{ t("common:language.arabic", locale) }}</option>
+            <option value="{{ localeUrl(page.url, 'en') }}" {% if locale == 'en' %}selected{% endif %}>{{ t("common:language.english", locale) }}</option>
+          </select>
+          <button
+            type="button"
+            class="theme-toggle p-2 rounded-lg border border-bleu-200 text-bleu-700 hover:bg-bleu-50 transition-colors dark:border-bleu-800 dark:text-bleu-300 dark:hover:bg-night-800"
+            aria-label="{{ t('common:nav.toggleTheme', locale) }}"
+          >
+            <svg class="theme-toggle-icon-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg>
+            <svg class="theme-toggle-icon-sun w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636A9 9 0 1112 21a9 9 0 01-6.364-15.364z"/></svg>
+          </button>
+        </div>
       </div>
     </nav>
   </div>

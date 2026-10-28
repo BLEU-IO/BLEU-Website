@@ -11,10 +11,14 @@
   }
 
   body {
-    @apply antialiased text-bleu-950;
+    @apply antialiased text-bleu-950 dark:text-bleu-100 transition-colors;
     background: linear-gradient(to bottom, #ffffff, #f0f9ff);
     min-height: 100vh;
     font-family: "Manrope", "Segoe UI", sans-serif;
+  }
+
+  .dark body {
+    background: linear-gradient(to bottom, #050a1c, #0a1230);
   }
 
   [dir="rtl"] body {
@@ -26,7 +30,7 @@
   }
 
   a {
-    @apply text-bleu-600 hover:text-bleu-700 transition-colors;
+    @apply text-bleu-600 hover:text-bleu-700 transition-colors dark:text-bleu-400 dark:hover:text-bleu-300;
   }
 }
 
@@ -45,30 +49,46 @@
   }
 
   .btn-primary {
-    @apply bg-bleu-700 text-white hover:bg-bleu-800 hover:text-white;
+    @apply bg-bleu-700 text-white hover:bg-bleu-800 hover:text-white dark:bg-bleu-600 dark:hover:bg-bleu-500 dark:text-white dark:hover:text-white;
   }
 
   .btn-secondary {
-    @apply bg-white text-bleu-700 border border-bleu-200 hover:bg-bleu-50;
+    @apply bg-white text-bleu-700 border border-bleu-200 hover:bg-bleu-50 dark:bg-night-800 dark:text-bleu-200 dark:border-bleu-800 dark:hover:bg-night-800/60 dark:hover:border-bleu-700 dark:hover:text-bleu-100;
   }
 
   .btn-discord {
-    @apply bg-[#5865F2] text-white hover:bg-[#4752C4];
+    @apply bg-[#5865F2] text-white hover:bg-[#4752C4] dark:text-white dark:hover:text-white;
   }
 
   .card {
-    @apply bg-white rounded-2xl border border-bleu-100 shadow-sm p-6;
+    @apply bg-white rounded-2xl border border-bleu-100 shadow-sm p-6 dark:bg-night-900 dark:border-bleu-900/60;
   }
 
   .badge {
-    @apply inline-block px-3 py-1 text-xs font-semibold rounded-full bg-bleu-100 text-bleu-700;
+    @apply inline-block px-3 py-1 text-xs font-semibold rounded-full bg-bleu-100 text-bleu-700 dark:bg-bleu-900/40 dark:text-bleu-200;
   }
 
   .lang-switcher {
-    @apply rounded-lg border border-bleu-200 bg-white py-2 text-sm font-medium text-bleu-700 focus:border-bleu-400 focus:outline-none;
+    @apply rounded-lg border border-bleu-200 bg-white py-2 text-sm font-medium text-bleu-700 focus:border-bleu-400 focus:outline-none dark:border-bleu-800 dark:bg-night-800 dark:text-bleu-200 dark:focus:border-bleu-500;
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%231545ae' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
+  }
+
+  .dark .lang-switcher {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%2393c5fd' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  .theme-toggle-icon-sun {
+    @apply hidden;
+  }
+
+  .dark .theme-toggle-icon-sun {
+    @apply block;
+  }
+
+  .dark .theme-toggle-icon-moon {
+    @apply hidden;
   }
 }
 
@@ -86,7 +106,7 @@ html[dir="rtl"] .lang-switcher {
 
 /* Markdown content styling - matches original BLEU */
 .prose {
-  @apply text-bleu-950 max-w-none text-lg;
+  @apply text-bleu-950 max-w-none text-lg dark:text-bleu-100;
   overflow-wrap: break-word;
 }
 
@@ -106,67 +126,67 @@ html[dir="rtl"] .lang-switcher {
 }
 
 .prose h1 {
-  @apply text-4xl md:text-5xl font-bold mb-6 pb-2 border-b-2 border-bleu-500 text-bleu-950;
+  @apply text-4xl md:text-5xl font-bold mb-6 pb-2 border-b-2 border-bleu-500 text-bleu-950 dark:text-white dark:border-bleu-400;
 }
 
 .prose h2 {
-  @apply text-3xl md:text-4xl font-semibold mb-5 pb-1 border-b border-bleu-300 text-bleu-950 mt-12;
+  @apply text-3xl md:text-4xl font-semibold mb-5 pb-1 border-b border-bleu-300 text-bleu-950 mt-12 dark:text-white dark:border-bleu-700;
 }
 
 .prose h3 {
-  @apply text-2xl md:text-3xl font-medium mb-4 text-bleu-950 mt-8;
+  @apply text-2xl md:text-3xl font-medium mb-4 text-bleu-950 mt-8 dark:text-white;
 }
 
 .prose h4 {
-  @apply text-xl md:text-2xl font-medium mb-2 text-bleu-950 mt-6;
+  @apply text-xl md:text-2xl font-medium mb-2 text-bleu-950 mt-6 dark:text-white;
 }
 
 .prose p {
-  @apply mb-6 leading-relaxed text-bleu-950;
+  @apply mb-6 leading-relaxed text-bleu-950 dark:text-bleu-100;
 }
 
 .prose ul {
-  @apply list-disc list-outside ps-6 mb-5 space-y-2 text-bleu-950;
+  @apply list-disc list-outside ps-6 mb-5 space-y-2 text-bleu-950 dark:text-bleu-100;
 }
 
 .prose ol {
-  @apply list-decimal list-outside ps-6 mb-5 space-y-2 text-bleu-950;
+  @apply list-decimal list-outside ps-6 mb-5 space-y-2 text-bleu-950 dark:text-bleu-100;
 }
 
 .prose li {
-  @apply text-bleu-950 leading-relaxed;
+  @apply text-bleu-950 leading-relaxed dark:text-bleu-100;
 }
 
 .prose a {
-  @apply text-bleu-600 hover:text-bleu-500 underline transition-colors duration-200;
+  @apply text-bleu-600 hover:text-bleu-500 underline transition-colors duration-200 dark:text-bleu-400 dark:hover:text-bleu-300;
 }
 
 .prose blockquote {
-  @apply border-s-4 border-bleu-400 ps-5 py-3 my-6 italic bg-bleu-50 text-bleu-800 rounded-e-lg;
+  @apply border-s-4 border-bleu-400 ps-5 py-3 my-6 italic bg-bleu-50 text-bleu-800 rounded-e-lg dark:border-bleu-500 dark:bg-bleu-900/30 dark:text-bleu-200;
 }
 
 .prose hr {
-  @apply border-t-2 border-bleu-200 my-8;
+  @apply border-t-2 border-bleu-200 my-8 dark:border-bleu-800;
 }
 
 .prose table {
-  @apply w-full border-collapse border border-bleu-200 text-sm my-6 rounded-lg overflow-hidden;
+  @apply w-full border-collapse border border-bleu-200 text-sm my-6 rounded-lg overflow-hidden dark:border-bleu-800;
 }
 
 .prose thead {
-  @apply bg-bleu-50;
+  @apply bg-bleu-50 dark:bg-night-800;
 }
 
 .prose th {
-  @apply border border-bleu-200 p-3 bg-bleu-100 font-semibold text-start text-bleu-950;
+  @apply border border-bleu-200 p-3 bg-bleu-100 font-semibold text-start text-bleu-950 dark:border-bleu-800 dark:bg-night-800 dark:text-white;
 }
 
 .prose td {
-  @apply border border-bleu-200 p-3 text-bleu-950;
+  @apply border border-bleu-200 p-3 text-bleu-950 dark:border-bleu-800 dark:text-bleu-100;
 }
 
 .prose tr {
-  @apply border-b border-bleu-200;
+  @apply border-b border-bleu-200 dark:border-bleu-800;
 }
 
 .prose img {
@@ -179,7 +199,7 @@ html[dir="rtl"] .lang-switcher {
 
 .prose figure img,
 .prose figure video {
-  @apply mx-auto my-0 w-full rounded-lg border border-bleu-100 shadow-sm;
+  @apply mx-auto my-0 w-full rounded-lg border border-bleu-100 shadow-sm dark:border-bleu-900;
 }
 
 .prose figure video {
@@ -193,15 +213,15 @@ html[dir="rtl"] .lang-switcher {
 }
 
 .prose figcaption {
-  @apply mt-3 text-sm leading-relaxed text-bleu-600;
+  @apply mt-3 text-sm leading-relaxed text-bleu-600 dark:text-bleu-300;
 }
 
 .prose .sentence-callout {
-  @apply border-s-4 border-bleu-300 ps-5 py-2 my-6 not-italic bg-transparent;
+  @apply border-s-4 border-bleu-300 ps-5 py-2 my-6 not-italic bg-transparent dark:border-bleu-600;
 }
 
 .prose .sentence-callout p {
-  @apply mb-2 text-bleu-800;
+  @apply mb-2 text-bleu-800 dark:text-bleu-200;
 }
 
 .prose .sentence-callout p:last-child {
@@ -209,7 +229,7 @@ html[dir="rtl"] .lang-switcher {
 }
 
 .prose .sentence-callout code {
-  @apply block whitespace-pre-wrap bg-transparent p-0 text-base md:text-lg leading-relaxed text-bleu-950;
+  @apply block whitespace-pre-wrap bg-transparent p-0 text-base md:text-lg leading-relaxed text-bleu-950 dark:text-white;
   font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
 }
 
@@ -312,6 +332,10 @@ pre.language-example::before {
 /* Grid pattern background */
 .grid-pattern {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(0 0 0 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+.dark .grid-pattern {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.02)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
 }
 
 /* Animation */
